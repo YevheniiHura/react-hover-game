@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/react-hover-game/static/css/main.19dac861.css",
+    "main.js": "/react-hover-game/static/js/main.f0db1164.js",
+    "index.html": "/react-hover-game/index.html",
+    "main.19dac861.css.map": "/react-hover-game/static/css/main.19dac861.css.map",
+    "main.f0db1164.js.map": "/react-hover-game/static/js/main.f0db1164.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.19dac861.css",
+    "static/js/main.f0db1164.js"
+  ]
+}
