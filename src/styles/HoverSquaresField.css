@@ -1,0 +1,9 @@
+.hover-square {
+  background-color: rgba(161, 146, 29, 0.304);
+  color: rgb(157, 69, 22);
+  border-radius: 5px;
+  padding: 5px;
+  width: 150px;
+  text-align: center;
+  margin-bottom: 3px;
+}

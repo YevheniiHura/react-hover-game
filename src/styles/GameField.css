@@ -1,0 +1,8 @@
+.game-row {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.game-row > div {
+  min-width: 20px;
+}
