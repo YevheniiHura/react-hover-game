@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import classnames from 'classnames';
 
 export const Square = ({ row, col, onSquareHover }) => {
   const [isBlue, setIsBlue] = useState(false);
@@ -10,7 +11,7 @@ export const Square = ({ row, col, onSquareHover }) => {
 
   return (
     <div
-      className={`square ${isBlue ? 'blue' : 'white'}`}
+      className={classnames('square', { 'blue': isBlue, 'white': !isBlue })}
       onMouseEnter={handleMouseEnter}
     ></div>
   );

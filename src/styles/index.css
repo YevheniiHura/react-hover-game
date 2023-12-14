@@ -1,6 +1,6 @@
-@import './Square.css';
-@import './GameField.css';
-@import './HoverSquaresField.css';
+@import '../components/GameField/GameField.css';
+@import '../components/HoverSquaresField/HoverSquaresField.css';
+@import '../components/Square/Square.css';
 
 .game__button {
   background-color: rgb(0, 132, 255);

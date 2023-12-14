@@ -1,6 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import { GameField } from './components/GameField/GameFiled';
-import { HoverSquaresField } from './components/HoverSquaresField/HoverSquaresField';
+import { GameField } from './components/GameField';
+import { HoverSquaresField } from './components/HoverSquaresField';
+
+const fetchModes = (setModes) => {
+  fetch('https://60816d9073292b0017cdd833.mockapi.io/modes')
+    .then(response => response.json())
+    .then(data => setModes(data))
+    .catch(error => console.error('Error fetching modes:', error));
+};
 
 export const App = () => {
   const [modes, setModes] = useState([]);
@@ -9,21 +16,22 @@ export const App = () => {
   const [hoverSquares, setHoverSquares] = useState([]);
 
   useEffect(() => {
-    // Отримання режимів з сервера
-    fetch('https://60816d9073292b0017cdd833.mockapi.io/modes')
-      .then(response => response.json())
-      .then(data => setModes(data))
-      .catch(error => console.error('Error fetching modes:', error));
+    fetchModes(setModes);
+  }, []);
 
-    // Скидання статусу гри при зміні режиму
+  useEffect(() => {
     setIsGameStarted(false);
     setHoverSquares([]);
   }, [selectedMode]);
 
-  const handleModeChange = (mode) => {
-    setSelectedMode(mode);
-    setIsGameStarted(false);
-    setHoverSquares([]);
+  const handleModeChange = (selectedId) => {
+    const mode = modes.find(mode => mode.id === selectedId);
+  
+    if (mode) {
+      setSelectedMode(mode);
+      setIsGameStarted(false);
+      setHoverSquares([]);
+    }
   };
 
   const handleStartGame = () => {
@@ -46,9 +54,7 @@ export const App = () => {
     <div>
       <div>
         <select 
-          onChange={(e) => 
-            handleModeChange(modes.find(mode => mode.id === e.target.value))
-          }
+          onChange={(e) => handleModeChange(e.target.value)}
           className='game__select'
         >
           <option value="">Select Mode</option>
@@ -57,8 +63,8 @@ export const App = () => {
               key={mode.id} 
               value={mode.id}
             >
-              {mode.name
-            }</option>
+              {mode.name}
+            </option>
           ))}
         </select>
 

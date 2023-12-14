@@ -1,17 +1,19 @@
 import React from 'react';
-import { Square } from '../Square/Square';
+import { Square } from '../Square';
 
 export const GameField = ({ selectedMode, onSquareHover }) => {
+  const gameFieldParams = Array.from({ length: selectedMode.field });
+
   return (
     <div>
       <h1>React Hover Game</h1>
       <div className="game-board">
-        {Array.from({ length: selectedMode.field }).map((_, row) => (
+        {gameFieldParams.map((_, row) => (
           <div 
             key={`row-${row}`}
             className="game-row"
           >
-            {Array.from({ length: selectedMode.field }).map((_, col) => (
+            {gameFieldParams.map((_, col) => (
               <Square 
                 onSquareHover={onSquareHover}
                 key={`${row}-${col}`}
