@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/react-hover-game/static/css/main.19dac861.css",
-    "main.js": "/react-hover-game/static/js/main.f0db1164.js",
+    "main.css": "/react-hover-game/static/css/main.e91f5d72.css",
+    "main.js": "/react-hover-game/static/js/main.963dc4d4.js",
     "index.html": "/react-hover-game/index.html",
-    "main.19dac861.css.map": "/react-hover-game/static/css/main.19dac861.css.map",
-    "main.f0db1164.js.map": "/react-hover-game/static/js/main.f0db1164.js.map"
+    "main.e91f5d72.css.map": "/react-hover-game/static/css/main.e91f5d72.css.map",
+    "main.963dc4d4.js.map": "/react-hover-game/static/js/main.963dc4d4.js.map"
   },
   "entrypoints": [
-    "static/css/main.19dac861.css",
-    "static/js/main.f0db1164.js"
+    "static/css/main.e91f5d72.css",
+    "static/js/main.963dc4d4.js"
   ]
 }
